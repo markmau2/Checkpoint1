@@ -1,43 +1,47 @@
 <?xml version="1.0"?>
 <robot>
     <!-- Joints -->
-    <!-- <gazebo reference="joint_chassis_caster_wheel">
+    <gazebo reference="joint_base_front_caster">
         <preserveFixedJoint>true</preserveFixedJoint>
-    </gazebo> -->
-    <!-- <gazebo reference="joint_laser_scan_chassis">
+    </gazebo>
+    <gazebo reference="joint_base_rear_caster">
         <preserveFixedJoint>true</preserveFixedJoint>
-    </gazebo> -->
+    </gazebo>
+    <gazebo reference="joint_front_laser">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+        <gazebo reference="joint_front_wheel">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+        <gazebo reference="joint_rear_wheel">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
 
     <!-- Colors -->
-    <gazebo reference="link_chassis">
+    <gazebo reference="base_link">
         <material>Gazebo/Blue</material>
     </gazebo>
-    <!-- <gazebo reference="link_caster_wheel">
-        <material>Gazebo/Grey</material>
+    <gazebo reference="front_caster">
+        <material>Gazebo/Blue</material>
         <mu1>0</mu1>
         <mu2>0</mu2>
-    </gazebo> -->
-    <gazebo reference="link_left_rear_wheel">
-        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="rear_caster">
+        <material>Gazebo/Blue</material>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+    </gazebo>
+    <gazebo reference="right_wheel">
+        <material>Gazebo/red</material>
         <mu1>0.8</mu1>
         <mu2>0.8</mu2>
     </gazebo>
-    <gazebo reference="link_left_front_wheel">
-        <material>Gazebo/Black</material>
+    <gazebo reference="left_wheel">
+        <material>Gazebo/red</material>
         <mu1>0.8</mu1>
         <mu2>0.8</mu2>
     </gazebo>
-    <gazebo reference="link_right_rear_wheel">
-        <material>Gazebo/Black</material>
-        <mu1>0.8</mu1>
-        <mu2>0.8</mu2>
-    </gazebo>
-    <gazebo reference="link_right_front_wheel">
-        <material>Gazebo/Black</material>
-        <mu1>0.8</mu1>
-        <mu2>0.8</mu2>
-    </gazebo>
-    <gazebo reference="link_laser_scan">
+    <gazebo reference="front_laser">
         <material>Gazebo/DarkGrey</material>
     </gazebo>
 
@@ -46,13 +50,11 @@
         <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
             <updateRate>100.0</updateRate>
             <robotNamespace>/</robotNamespace>
-            <leftFrontJoint>joint_chassis_left_front_wheel</leftFrontJoint>
-            <rightFrontJoint>joint_chassis_right_front_wheel</rightFrontJoint>
-            <leftRearJoint>joint_chassis_left_rear_wheel</leftRearJoint>
-            <rightRearJoint>joint_chassis_right_rear_wheel</rightRearJoint>
+            <leftFrontJoint>joint_base_left_wheel</leftFrontJoint>
+            <rightFrontJoint>joint_base_right_wheel</rightFrontJoint>
             <wheelSeparation>0.65</wheelSeparation>
-            <wheelDiameter>0.4</wheelDiameter>
-            <robotBaseFrame>link_chassis</robotBaseFrame>
+            <wheelDiameter>0.1</wheelDiameter>
+            <robotBaseFrame>base_link</robotBaseFrame>
             <torque>20</torque>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
@@ -61,7 +63,7 @@
     </gazebo>
 
     <!-- Laser -->
-    <gazebo reference="link_laser_scan">
+    <gazebo reference="front_laser">
         <sensor type="ray" name="head_hokuyo_sensor">
             <pose>0 0 0 0 0 0</pose>
             <visualize>true</visualize>
@@ -93,11 +95,4 @@
         </sensor>
     </gazebo>
 
-    <!-- Control plugin -->
-    <!-- <gazebo>
-      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace>/robot</robotNamespace>
-        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      </plugin>
-    </gazebo> -->
 </robot>

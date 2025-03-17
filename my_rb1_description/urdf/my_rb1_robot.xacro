@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<robot name="my_rb1_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Parameters -->
+    <xacro:property name="base_mass" value="22" />
+    <xacro:property name="pi" value="3.1415926535897931"/>
+
+    <xacro:include filename="$(find my_rb1_description)/urdf/my_rb1_robot.urdf" />
+    
+    </robot>
