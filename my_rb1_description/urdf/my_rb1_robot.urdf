@@ -2,9 +2,25 @@
 
 <robot name="my_rb1_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-   <!-- <xacro:include filename="$(find my_robot_description)/urdf/my_rb1_robot.gazebo" />
-      -->
+    <!-- Link - link_footprint -->
+    <link name="link_footprint">
+        <inertial>
+            <mass value="0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link> 
 
+    <!-- joint base / foot_print -->
+    <joint name="joint_base_link_footprint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <child link="base_link" />
+        <parent link="link_footprint" />
+        <axis rpy="0 0 0" xyz="0 0 0" />
+        <limit effort="10000" velocity="1000" />
+        <joint_properties damping="0" friction="0" />
+    </joint> 
+    
 
     <!-- Link - base -->
     <link name="base_link">
@@ -117,13 +133,13 @@
         <collision>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder length="0.03" radius="0.05"/>
+                <cylinder length="0.03" radius="0.025"/>
             </geometry>
         </collision>
         <visual>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder length="0.03" radius="0.05"/>
+                <cylinder length="0.03" radius="0.025"/>
             </geometry>
             <material name="Red">
                 <color rgba="1 0 0 1" />
@@ -152,13 +168,13 @@
         <collision>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder length="0.03" radius="0.05"/>
+                <cylinder length="0.03" radius="0.025"/>
             </geometry>
         </collision>
         <visual>
             <origin rpy="${pi/2} 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder length="0.03" radius="0.05"/>
+                <cylinder length="0.03" radius="0.025"/>
             </geometry>
             <material name="Red">
                 <color rgba="1 0 0 1" />

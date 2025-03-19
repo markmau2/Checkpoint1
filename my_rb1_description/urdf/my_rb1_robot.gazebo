@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot>
     <!-- Joints -->
+    <gazebo reference="joint_link_footprint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
     <gazebo reference="joint_base_front_caster">
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
@@ -10,10 +13,10 @@
     <gazebo reference="joint_front_laser">
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
-        <gazebo reference="joint_front_wheel">
+        <gazebo reference="joint_base_right_wheel">
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
-        <gazebo reference="joint_rear_wheel">
+        <gazebo reference="joint_base_left_wheel">
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
 
@@ -32,12 +35,12 @@
         <mu2>0</mu2>
     </gazebo>
     <gazebo reference="right_wheel">
-        <material>Gazebo/red</material>
+        <material>Gazebo/Red</material>
         <mu1>0.8</mu1>
         <mu2>0.8</mu2>
     </gazebo>
     <gazebo reference="left_wheel">
-        <material>Gazebo/red</material>
+        <material>Gazebo/Red</material>
         <mu1>0.8</mu1>
         <mu2>0.8</mu2>
     </gazebo>
@@ -45,7 +48,9 @@
         <material>Gazebo/DarkGrey</material>
     </gazebo>
 
-    <!-- Skid drive -->
+  
+  <!-- Skid drive -->
+    <!--
     <gazebo>
         <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
             <updateRate>100.0</updateRate>
@@ -60,9 +65,11 @@
             <odometryTopic>odom</odometryTopic>
             <broadcastTF>false</broadcastTF>
         </plugin>
-    </gazebo>
+    </gazebo>  
+       -->
 
     <!-- Laser -->
+    <!--
     <gazebo reference="front_laser">
         <sensor type="ray" name="head_hokuyo_sensor">
             <pose>0 0 0 0 0 0</pose>
@@ -94,5 +101,5 @@
             </plugin>
         </sensor>
     </gazebo>
-
+    -->
 </robot>
