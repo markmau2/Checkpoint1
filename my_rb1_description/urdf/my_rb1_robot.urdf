@@ -4,9 +4,24 @@
 
    <!-- <xacro:include filename="$(find my_robot_description)/urdf/my_rb1_robot.gazebo" />
       -->
+    <!-- Link - link_footprint-->
+    <link name="link_footprint"> 
+      <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+            <box size="0.01 0.01 0"/>
+            </geometry>
+        </visual>
+        </link>
 
+    <!-- Joint - joint_base_footprint-->
+    <joint name="joint_base_footprint" type="planar">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="link_footprint"/>
+    <child link="base_link"/>
+    </joint>
 
-    <!-- Link - base -->
+    <!-- Link - base_link -->
     <link name="base_link">
         <inertial>
             <mass value="${base_mass}" />
@@ -32,7 +47,7 @@
 
                     <!-- joint base / Front Caster -->
     <joint name="joint_base_front_caster" type="fixed">
-        <origin rpy="0 0 0" xyz="-0.1 0.0 -0.15" />
+        <origin rpy="0 0 0" xyz="0.1 0.0 -0.15" />
         <child link="front_caster" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="1 0 0" />
@@ -65,7 +80,7 @@
     
                     <!-- joint base / Rear Caster -->
     <joint name="joint_base_rear_caster" type="fixed">
-        <origin rpy="0 0 0" xyz="0.1 0.0 -0.15" />
+        <origin rpy="0 0 0" xyz="-0.1 0.0 -0.15" />
         <child link="rear_caster" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="1 0 0" />
@@ -98,7 +113,7 @@
 
     <!-- Joint - base / left wheel -->
     <joint name="joint_base_left_wheel" type="continuous">
-        <origin rpy="0 0 0" xyz="0 -0.2 -0.15" />
+        <origin rpy="0 0 0" xyz="0 0.2 -0.15" />
         <child link="left_wheel" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="0 1 0" />
@@ -133,7 +148,7 @@
 
     <!-- Joint - base / right wheel -->
     <joint name="joint_base_right_wheel" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0.2 -0.15" />
+        <origin rpy="0 0 0" xyz="0 -0.2 -0.15" />
         <child link="right_wheel" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="0 1 0" />
