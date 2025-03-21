@@ -50,13 +50,13 @@
 
   
   <!-- Skid drive -->
-    <!--
+    
     <gazebo>
-        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive_drive.so">
             <updateRate>100.0</updateRate>
             <robotNamespace>/</robotNamespace>
-            <leftFrontJoint>joint_base_left_wheel</leftFrontJoint>
-            <rightFrontJoint>joint_base_right_wheel</rightFrontJoint>
+            <leftJoint>joint_base_left_wheel</leftJoint>
+            <rightJoint>joint_base_right_wheel</rightJoint>
             <wheelSeparation>0.65</wheelSeparation>
             <wheelDiameter>0.1</wheelDiameter>
             <robotBaseFrame>base_link</robotBaseFrame>
@@ -66,10 +66,10 @@
             <broadcastTF>false</broadcastTF>
         </plugin>
     </gazebo>  
-       -->
+       
 
     <!-- Laser -->
-    <!--
+    
     <gazebo reference="front_laser">
         <sensor type="ray" name="head_hokuyo_sensor">
             <pose>0 0 0 0 0 0</pose>
@@ -101,5 +101,5 @@
             </plugin>
         </sensor>
     </gazebo>
-    -->
+    
 </robot>
