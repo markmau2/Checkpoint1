@@ -4,11 +4,12 @@
 
     <!-- Link - link_footprint -->
     <link name="link_footprint">
-        <inertial>
-            <mass value="0" />
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
-        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size= " 0.1 0.1 0"/>
+            </geometry>
+        </visual>
     </link> 
 
     <!-- joint base / foot_print -->
@@ -48,7 +49,7 @@
 
                     <!-- joint base / Front Caster -->
     <joint name="joint_base_front_caster" type="fixed">
-        <origin rpy="0 0 0" xyz="-0.1 0.0 -0.15" />
+        <origin rpy="0 0 0" xyz="0.1 0.0 -0.15" />
         <child link="front_caster" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="1 0 0" />
@@ -81,7 +82,7 @@
     
                     <!-- joint base / Rear Caster -->
     <joint name="joint_base_rear_caster" type="fixed">
-        <origin rpy="0 0 0" xyz="0.1 0.0 -0.15" />
+        <origin rpy="0 0 0" xyz="-0.1 0.0 -0.15" />
         <child link="rear_caster" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="1 0 0" />
@@ -114,7 +115,7 @@
 
     <!-- Joint - base / left wheel -->
     <joint name="joint_base_left_wheel" type="continuous">
-        <origin rpy="0 0 0" xyz="0 -0.2 -0.15" />
+        <origin rpy="0 0 0" xyz="0 0.2 -0.15" />
         <child link="left_wheel" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="0 1 0" />
@@ -149,7 +150,7 @@
 
     <!-- Joint - base / right wheel -->
     <joint name="joint_base_right_wheel" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0.2 -0.15" />
+        <origin rpy="0 0 0" xyz="0 -0.2 -0.15" />
         <child link="right_wheel" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="0 1 0" />
