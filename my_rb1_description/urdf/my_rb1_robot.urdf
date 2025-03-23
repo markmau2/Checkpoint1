@@ -83,14 +83,14 @@
                     <!-- joint base / Rear Caster -->
     <joint name="joint_base_rear_caster" type="fixed">
         <origin rpy="0 0 0" xyz="-0.1 0.0 -0.15" />
-        <child link="rear_caster" />
+        <child link="back_caster" />
         <parent link="base_link" />
         <axis rpy="0 0 0" xyz="1 0 0" />
         <limit effort="10000" velocity="1000" />
         <joint_properties damping="0" friction="0" />
     </joint>
                     <!-- Link Rear Caster -->
-    <link name="rear_caster">
+    <link name="back_caster">
         <inertial>
             <mass value="1" />
             <origin xyz="0 0 0" rpy="0 0 0" />
