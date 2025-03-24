@@ -31,4 +31,8 @@
   <!-- Combine joint values -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
   
+    <rosparam file="$(find my_rb1_description)/config/config.yaml" command="load" />
+    <node name="spawner" pkg="controller_manager" type="spawner"
+          respawn="false" output="screen" args= "mobile_base_controller" />
+
 </launch>

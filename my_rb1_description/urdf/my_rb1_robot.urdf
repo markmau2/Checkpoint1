@@ -212,4 +212,10 @@
             </geometry>
         </collision>
     </link>
+
+          <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_contol.so">
+  </plugin>
+</gazebo>
+
 </robot>
