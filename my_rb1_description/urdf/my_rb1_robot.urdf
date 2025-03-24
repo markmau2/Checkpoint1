@@ -41,7 +41,7 @@
             <geometry>
                 <cylinder length="0.3" radius="0.25"/>
             </geometry>
-            <material name="Blue">
+            <material name="Black">
                 <color rgba="0.203125 0.23828125 0.28515625 0.5" /> 
             </material>
         </visual>
