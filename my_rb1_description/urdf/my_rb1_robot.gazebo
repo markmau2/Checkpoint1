@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot name="my_rb1_robot">
     <!-- Joints -->
-    <gazebo reference="joint_link_footprint">
+   <!-- <gazebo reference="joint_base_footprint">
         <preserveFixedJoint>true</preserveFixedJoint>
-    </gazebo>
+    </gazebo> -->
     <gazebo reference="joint_base_front_caster">
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
