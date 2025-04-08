@@ -14,7 +14,7 @@
 
     <!-- joint base / foot_print -->
     <joint name="joint_base_footprint" type="fixed">
-        <origin rpy="0 0 -0.15" xyz="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <child link="base_link" />
         <parent link="link_footprint" />
         <axis rpy="0 0 0" xyz="0 0 0" />
@@ -27,7 +27,7 @@
     <link name="base_link">
         <inertial>
             <mass value="${base_mass}" />
-            <origin xyz="0 0 0.3" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <inertia ixx="0.4625" ixy="0" ixz="0" iyy="0.4625" iyz="0" izz="0.625" />
         </inertial>
 
@@ -201,7 +201,7 @@
             <geometry>
                 <cylinder radius="0.075" length="0.10"/>
             </geometry>
-            <material name="Green">
+            <material name="Gray">
                 <color rgba="0.0 0.8 0.0 1.0" />
             </material>
         </visual>

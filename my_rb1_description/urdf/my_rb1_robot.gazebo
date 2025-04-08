@@ -36,13 +36,13 @@
     </gazebo>
     <gazebo reference="right_wheel">
         <material>Gazebo/Red</material>
-        <mu1>0.8</mu1>
-        <mu2>0.8</mu2>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
     </gazebo>
     <gazebo reference="left_wheel">
         <material>Gazebo/Red</material>
-        <mu1>0.8</mu1>
-        <mu2>0.8</mu2>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
     </gazebo>
     <gazebo reference="front_laser">
         <material>Gazebo/DarkGrey</material>
@@ -57,10 +57,10 @@
             <updateRate>100.0</updateRate>
             <leftJoint>joint_base_left_wheel</leftJoint>
             <rightJoint>joint_base_right_wheel</rightJoint>
-            <wheelSeparation>0.65</wheelSeparation>
-            <wheelDiameter>0.1</wheelDiameter>
+            <wheelSeparation>0.4</wheelSeparation>
+            <wheelDiameter>0.05</wheelDiameter>
             <robotBaseFrame>base_footprint</robotBaseFrame>
-            <torque>20</torque>
+            <torque>5</torque>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
@@ -100,7 +100,7 @@
             </ray>
             
             <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-                <topicName>/laser/scan</topicName>
+                <topicName>/scan</topicName>
                 <frameName>sensor_laser</frameName>
             </plugin>
         </sensor>
